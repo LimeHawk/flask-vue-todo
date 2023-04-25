@@ -2,7 +2,7 @@
 
 <h2>Descrição do Projeto</h2>
 
-<p>Este é um projeto Flask de exemplo que mostra como criar um aplicativo da Web simples usando Flask, SQLAlchemy e WTForms. O aplicativo permite que os usuários insiram, editem e excluam itens de uma lista de tarefas.</p>
+<p>Este é um projeto Flask de exemplo que mostra como criar um aplicativo da Web simples usando Flask, SQLAlchemy e WTForms. O aplicativo permite que os usuários insiram e excluam itens de uma lista de tarefas.</p>
 
 <h2>Instalação</h2>
 <p>Antes de começar, certifique-se de ter o Python 3.6 ou superior instalado na sua máquina. Você pode baixar o Python no site oficial <a href="https://www.python.org/downloads/">python.org</a>.</p>
@@ -16,7 +16,7 @@
 2. Install requirements:
 
       pip install -r requirements.txt</pre>
-      
+
 <p>Este comando instalará todas as bibliotecas listadas no arquivo <code>requirements.txt</code>, incluindo Flask, WTForms, python-dotenv e Flask-SQLAlchemy.</p>
 
 <h2>Executando o Aplicativo</h2>
@@ -36,3 +36,4 @@
 <li>Excluir uma tarefa existente</li>
 </ul>
 
+<p>Este projeto foi desenvolvido acompanhando este <a href="https://youtu.be/_YeN69XoqqU">vídeo</a>.</p>
