@@ -13,28 +13,57 @@ const TaskApp = {
     await this.getTasks();
   },
   methods: {
-    async getTasks() {
-      const response = await fetch(window.location, {
-        method: "get",
-        headers: {
-          "X-Requested-With": "XMLHttpRequest",
-        },
+    async sendRequest(url, method, data) {
+      const myHeaders = new Headers({
+        "Content-Type": "application/json",
+        "X-Requested-With": "XMLHttpRequest",
       });
+
+      const response = await fetch(url, {
+        method: method,
+        headers: myHeaders,
+        body: data,
+      });
+
+      return response;
+    },
+
+    async getTasks() {
+      const response = await this.sendRequest(window.location, "get");
 
       this.tasks = await response.json();
     },
 
     async createTask() {
       await this.getTasks();
-      console.log(window.location.href);
-      const response = await fetch(window.location + "create", {
-        method: "post",
-        headers: {
-          "Content-Type": "application/json",
-          "X-Requested-With": "XMLHttpRequest",
-        },
-        body: JSON.stringify(this.task),
-      });
+
+      await this.sendRequest(
+        window.location + "create",
+        "post",
+        JSON.stringify(this.task)
+      );
+
+      await this.getTasks();
+
+      this.task.title = "";
+    },
+
+    async deleteTask(task) {
+      await this.sendRequest(
+        window.location + "delete",
+        "post",
+        JSON.stringify(task)
+      );
+
+      await this.getTasks();
+    },
+
+    async completeTask(task) {
+      await this.sendRequest(
+        window.location + "complete",
+        "post",
+        JSON.stringify(task)
+      );
 
       await this.getTasks();
     },

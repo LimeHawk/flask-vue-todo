@@ -70,6 +70,35 @@ def create_task():
     print('error',user_input)
     return redirect(url_for('index'))
 
+@app.route('/delete', methods=['POST'])
+def delete_task():
+
+    task_id = request.get_json().get('id')
+    task = Task.query.filter_by(id=task_id).first()
+
+    db.session.delete(task)
+    db.session.commit()
+
+    return jsonify({'result':'okay'}),200
+
+@app.route('/complete',methods=['POST'])
+def complete_task():
+    task_id = request.get_json().get('id')
+    task = Task.query.filter_by(id=task_id).first()
+
+    task.completed = True
+    
+    db.session.add(task)
+    db.session.commit()
+
+    return jsonify({'result':'okay'}),200
+
+@app.route('/getTasks')
+def get_tasks():
+    tasks = Task.query.all()
+    return jsonify(tasks)
+    
+    
 
 
 if __name__ == '__main__':
