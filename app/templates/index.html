@@ -2,5 +2,32 @@
 
 
 {% block content %}
-<h1>Hello World </h1>
+
+<div id="app">
+
+  <form action="">
+    <div class="for-group row">
+      <div class="col-9">
+        <label for="">Create new task</label>
+        <input type="text" class="form-control">
+      </div>
+      <div class="col-auto mt-auto">
+        <button class="btn btn-success" type="submit">Create</button>
+      </div>
+    </div>
+  </form>
+
+  <div class="mt-5">
+    <div class="card">
+      <div class="card-body row justify-content-between px-4">
+
+        Do nothing
+
+        <button type="submit" class="btn-close"></button>
+      </div>
+    </div>
+  </div>
+
+</div>
+
 {% endblock %}
