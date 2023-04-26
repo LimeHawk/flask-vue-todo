@@ -17,6 +17,11 @@
   <div class="container">
     <div class="row">
       <div class="col-6 mx-auto mt-5">
+        <!-- 
+Esse trecho de código utiliza a sintaxe do template engine do Flask para definir um bloco que pode ser preenchido com conteúdo de outros arquivos.
+O bloco é identificado pela tag "block" com o nome "content".
+Os arquivos que estenderem esse template podem sobrescrever o conteúdo desse bloco usando a mesma tag "block" e nome "content". 
+-->
         {% block content %}
 
         {% endblock %}
