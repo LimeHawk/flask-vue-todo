@@ -15,7 +15,9 @@
       
 2. Install requirements:
 
-      pip install -r requirements.txt</pre>
+      pip install -r requirements.txt
+      pip install --upgrade Flask SQLAlchemy WTForms
+</pre>
 
 <p>Este comando instalará todas as bibliotecas listadas no arquivo <code>requirements.txt</code>, incluindo Flask, WTForms, python-dotenv e Flask-SQLAlchemy.</p>
 
